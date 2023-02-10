@@ -24,7 +24,7 @@ menu {
   flex: 1;
   display: flex;
   flex-direction: row !important;
-  //play with previous line to see what important does
+  /*play with previous line to see what important does*/
   list-style: none;
 }
 
@@ -57,7 +57,7 @@ footer a {
 
 .game {
   background: rgb(0,0,0);
-  //is the background not just white with 0 of everything?
+  /*is the background not just white with 0 of everything?*/
   border-radius: 50%;
   box-shadow: 0 0 20px 5px rgb(69, 69, 69);
   width: 80vw;
@@ -86,7 +86,7 @@ footer a {
 
 .button-top-right {
   border-radius: 0 100% 0 0;
-  margin; 20px 20px 0 0;
+  margin: 20px 20px 0 0;
   background-color: red;
   border: thick solid rgb(83, 12, 12);
 }
@@ -134,7 +134,7 @@ footer a {
   cursor: default;
   width: 50px;
   height: 30px;
-  bordre-radius: 10px;
+  border-radius: 10px;
   border: solid thin rgb(117, 0, 0);
   background-color: #300;
 }
