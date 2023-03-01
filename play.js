@@ -1,4 +1,3 @@
-//these are the sounds that are played when a button is clicked
 const btnDescriptions = [
   { file: 'sound1.mp3', hue: 120 },
   { file: 'sound2.mp3', hue: 0 },
@@ -80,7 +79,7 @@ class Game {
       }
     }
   }
-  
+
   async reset() {
     this.allowPlayer = false;
     this.playerPlaybackPos = 0;
@@ -91,11 +90,11 @@ class Game {
     await this.playSequence();
     this.allowPlayer = true;
   }
-  
+
   getPlayerName() {
     return localStorage.getItem('userName') ?? 'Mystery player';
   }
-  
+
   async playSequence() {
     await delay(500);
     for (const btn of this.sequence) {
@@ -103,30 +102,30 @@ class Game {
       await delay(100);
     }
   }
-  
+
   addButton() {
     const btn = this.getRandomButton();
     this.sequence.push(btn);
   }
-  
+
   updateScore(score) {
     const scoreEl = document.querySelector('#score');
     scoreEl.textContent = score;
   }
 
-  async buttonDance(laps = 2) {
+  async buttonDance(laps = 1) {
     for (let step = 0; step < laps; step++) {
       for (const btn of this.buttons.values()) {
         await btn.press(0.0);
       }
     }
   }
-  
+
   getRandomButton() {
     let buttons = Array.from(this.buttons.values());
     return buttons[Math.floor(Math.random() * this.buttons.size)];
   }
-  
+
   saveScore(score) {
     const userName = this.getPlayerName();
     let scores = [];
@@ -138,10 +137,11 @@ class Game {
 
     localStorage.setItem('scores', JSON.stringify(scores));
   }
-  
+
   updateScores(userName, score, scores) {
     const date = new Date().toLocaleDateString();
     const newScore = { name: userName, score: score, date: date };
+
     let found = false;
     for (const [i, prevScore] of scores.entries()) {
       if (score > prevScore.score) {
@@ -150,12 +150,15 @@ class Game {
         break;
       }
     }
+
     if (!found) {
       scores.push(newScore);
     }
+
     if (scores.length > 10) {
       scores.length = 10;
     }
+
     return scores;
   }
 }
@@ -171,5 +174,5 @@ function delay(milliseconds) {
 }
 
 function loadSound(filename) {
-  return new Audio('assets/' + filename);
+  return new Audio('assets_' + filename);
 }

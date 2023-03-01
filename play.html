@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simon</title>
-    <link rel="icon" href="favicon.ico"/>
+    <link rel="icon" href="favicon.ico" />
+
     <link rel="stylesheet" href="main.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -41,13 +43,13 @@
       </div>
       <div class="game">
         <div class="button-container">
-          <button id="orange" class="game-button button-top-left" onclick="game.pressButton(this)"></button>
-          <button id="purple" class="game-button button-top-right" onclick="game.pressButton(this)"></button>
-          <button id="brown" class="game-button button-bottom-left" onclick="game.pressButton(this)"></button>
-          <button id="pink" class="game-button button-bottom-right" onclick="game.pressButton(this)"></button>
+          <button id="green" class="game-button button-top-left" onclick="game.pressButton(this)"></button>
+          <button id="red" class="game-button button-top-right" onclick="game.pressButton(this)"></button>
+          <button id="yellow" class="game-button button-bottom-left" onclick="game.pressButton(this)"></button>
+          <button id="blue" class="game-button button-bottom-right" onclick="game.pressButton(this)"></button>
           <div class="controls center">
             <div class="game-name">Simon<sup>&reg;</sup></div>
-            <div id = "score" class="score center">--</div>
+            <div id="score" class="score center">--</div>
             <button class="btn btn-primary" onclick="game.reset()">Reset</button>
           </div>
         </div>
@@ -57,12 +59,10 @@
     <footer class="bg-dark text-dark text-muted">
       <div class="container-fluid">
         <span class="text-reset">Author Name: Elisa</span>
-        <a
-          class="text-reset"
-          href="https://github.com/elisamcrae/simon"
-          >Source</a
-        >
+        <a class="text-reset" href="https://github.com/elisamcrae/simon">Source</a>
       </div>
     </footer>
+
+    <script src="play.js"></script>
   </body>
 </html>
